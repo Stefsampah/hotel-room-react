@@ -41,13 +41,13 @@
 <summary>🖼️ Voir les captures d'écran</summary>
 
 ### Dashboard Principal
-![Dashboard](https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=400&fit=crop&crop=center)
+![Dashboard](./frontend/public/images/dashboard.jpg)
 
 ### Gestion des Chambres
-![Gestion des Chambres](https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&h=400&fit=crop&crop=center)
+![Gestion des Chambres](./frontend/public/images/chambres.jpg)
 
 ### Interface de Réservation
-![Interface de Réservation](https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=400&fit=crop&crop=center)
+![Interface de Réservation](./frontend/public/images/reservations.jpg)
 
 </details>
 
