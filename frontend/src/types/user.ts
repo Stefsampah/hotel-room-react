@@ -1,16 +1,22 @@
+// Types pour les utilisateurs
+export enum UserRole {
+  ADMIN = 'admin',
+  MANAGER = 'manager',
+  STAFF = 'staff'
+}
+
 export interface User {
   id: string;
   username: string;
   email: string;
-  role: UserRole;
   firstName: string;
   lastName: string;
-  createdAt: Date;
+  role: UserRole;
+  isActive: boolean;
   lastLogin?: Date;
-}
-
-export enum UserRole {
-  ADMIN = 'admin',
-  STAFF = 'staff',
-  MANAGER = 'manager'
+  passwordChangedAt?: Date;
+  passwordResetToken?: string;
+  passwordResetExpires?: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }

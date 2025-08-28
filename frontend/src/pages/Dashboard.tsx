@@ -12,8 +12,34 @@ import {
   Star,
   Building2
 } from 'lucide-react';
-import type { Room } from '../types/room.js';
-import type { Reservation } from '../types/reservation.js';
+// Types définis localement
+interface Room {
+  id: string;
+  number: string;
+  type: string;
+  capacity: number;
+  price: number;
+  amenities: string[];
+  status: string;
+  floor: number;
+  description: string;
+  imageUrl: string;
+}
+
+interface Reservation {
+  id: string;
+  roomId: string;
+  guestName: string;
+  guestEmail: string;
+  guestPhone: string;
+  checkIn: Date;
+  checkOut: Date;
+  totalPrice: number;
+  status: string;
+  createdAt: Date;
+  updatedAt: Date;
+  specialRequests?: string;
+}
 
 // Données simulées pour le tableau de bord
 const mockRooms: Room[] = [
@@ -168,17 +194,55 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* En-tête avec image d'hôtel */}
-      <div className="relative bg-gradient-to-r from-hotel-600 to-hotel-800 rounded-lg overflow-hidden">
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-        <div className="relative px-6 py-12 text-center">
-          <div className="mx-auto h-20 w-20 flex items-center justify-center rounded-full bg-white bg-opacity-20 mb-4">
-            <Building2 className="h-10 w-10 text-white" />
+      {/* Header principal avec image immersive */}
+      <div className="relative h-80 rounded-lg overflow-hidden mb-8">
+        {/* Image de fond */}
+        <img
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=400&fit=crop&crop=center"
+          alt="Hôtel de luxe"
+          className="w-full h-full object-cover"
+        />
+        
+        {/* Overlay sombre */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20"></div>
+        
+        {/* Contenu centré */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center text-white">
+            {/* Icône avec effet de verre */}
+            <div className="mx-auto h-24 w-24 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm border border-white/30 mb-6 shadow-2xl">
+              <Building2 className="h-12 w-12 text-white" />
+            </div>
+            
+            {/* Titre principal */}
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-shadow-lg">
+              Bienvenue à l'Hôtel Manager
+            </h1>
+            
+            {/* Sous-titre */}
+            <p className="text-xl md:text-2xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed">
+              Gérez votre hôtel avec efficacité et style
+            </p>
+            
+            {/* Badge de statut */}
+            <div className="mt-6 inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30">
+              <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+              <span className="text-sm font-medium">Système opérationnel</span>
+            </div>
           </div>
-          <h1 className="text-3xl font-bold text-white mb-2">Bienvenue à l'Hôtel Manager</h1>
-          <p className="text-hotel-100 text-lg">
-            Gérez votre hôtel avec efficacité et style
-          </p>
+        </div>
+        
+        {/* Éléments décoratifs */}
+        <div className="absolute top-4 right-4">
+          <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+            <span className="text-white text-xs font-medium">24/7</span>
+          </div>
+        </div>
+        
+        <div className="absolute bottom-4 left-4">
+          <div className="w-12 h-12 rounded-full bg-hotel-500/80 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+            <span className="text-white text-xs font-medium">★</span>
+          </div>
         </div>
       </div>
 

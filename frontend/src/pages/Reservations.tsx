@@ -17,8 +17,7 @@ import {
   Trash2,
   Bed
 } from 'lucide-react';
-import type { Reservation, ReservationStatus } from '../types/reservation.js';
-import type { Room } from '../types/room.js';
+import { ReservationStatus } from '../types/reservation.js';
 
 // Données simulées pour les réservations
 const mockReservations: Reservation[] = [

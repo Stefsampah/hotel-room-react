@@ -1,3 +1,12 @@
+// Types pour les réservations
+export enum ReservationStatus {
+  PENDING = 'pending',
+  CONFIRMED = 'confirmed',
+  CHECKED_IN = 'checked_in',
+  CHECKED_OUT = 'checked_out',
+  CANCELLED = 'cancelled'
+}
+
 export interface Reservation {
   id: string;
   roomId: string;
@@ -8,15 +17,18 @@ export interface Reservation {
   checkOut: Date;
   totalPrice: number;
   status: ReservationStatus;
-  createdAt: Date;
-  updatedAt: Date;
+  numberOfGuests: {
+    adults: number;
+    children: number;
+  };
   specialRequests?: string;
-}
-
-export enum ReservationStatus {
-  PENDING = 'pending',
-  CONFIRMED = 'confirmed',
-  CHECKED_IN = 'checked_in',
-  CHECKED_OUT = 'checked_out',
-  CANCELLED = 'cancelled'
+  payment?: {
+    method: string;
+    status: string;
+    amount: number;
+  };
+  notes?: string;
+  isActive?: boolean;
+  createdAt?: Date;
+  updatedAt?: Date;
 }

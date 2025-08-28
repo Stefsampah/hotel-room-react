@@ -16,7 +16,7 @@ import {
   Tv,
   Snowflake
 } from 'lucide-react';
-import type { Room, RoomType, RoomStatus } from '../types/room.js';
+import { RoomType, RoomStatus } from '../types/room.js';
 
 // Données simulées pour les chambres avec des images réalistes
 const mockRooms: Room[] = [

@@ -131,8 +131,8 @@ const seedDatabase = async () => {
         guestName: 'Marie Dupont',
         guestEmail: 'marie.dupont@email.com',
         guestPhone: '+33 6 12 34 56 78',
-        checkIn: new Date('2024-01-15'),
-        checkOut: new Date('2024-01-17'),
+        checkIn: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000), // Dans 2 jours
+        checkOut: new Date(Date.now() + 4 * 24 * 60 * 60 * 1000), // Dans 4 jours
         totalPrice: 179.98,
         status: 'confirmed',
         numberOfGuests: { adults: 1, children: 0 },
@@ -143,8 +143,8 @@ const seedDatabase = async () => {
         guestName: 'Jean Martin',
         guestEmail: 'jean.martin@email.com',
         guestPhone: '+33 6 98 76 54 32',
-        checkIn: new Date('2024-01-16'),
-        checkOut: new Date('2024-01-19'),
+        checkIn: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000), // Dans 3 jours
+        checkOut: new Date(Date.now() + 6 * 24 * 60 * 60 * 1000), // Dans 6 jours
         totalPrice: 749.97,
         status: 'checked_in',
         numberOfGuests: { adults: 2, children: 1 },

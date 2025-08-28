@@ -1,8 +1,5 @@
 import axios from 'axios';
-import type { Room } from '../types/room.js';
-import type { Reservation } from '../types/reservation.js';
-import type { User } from '../types/user.js';
-import type { ApiResponse, PaginatedResponse } from '../types/api.js';
+import type { Room, Reservation, User, ApiResponse, PaginatedResponse } from '../types';
 
 class ApiService {
   private api: any;

@@ -6,6 +6,9 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Rooms from './pages/Rooms';
 import Reservations from './pages/Reservations';
+import RoomDetail from './pages/RoomDetail';
+import NewRoom from './pages/NewRoom';
+import NewReservation from './pages/NewReservation';
 
 // Composant de protection des routes
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -33,22 +36,22 @@ const AppContent: React.FC = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route
-          path="/*"
+          path="/"
           element={
             <ProtectedRoute>
-              <Layout>
-                <Routes>
-                  <Route path="/" element={<Dashboard />} />
-                  <Route path="/dashboard" element={<Dashboard />} />
-                  <Route path="/rooms" element={<Rooms />} />
-                  <Route path="/reservations" element={<Reservations />} />
-                  {/* Autres routes seront ajoutées ici */}
-                  <Route path="*" element={<Navigate to="/" replace />} />
-                </Routes>
-              </Layout>
+              <Layout />
             </ProtectedRoute>
           }
-        />
+        >
+          <Route index element={<Dashboard />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="rooms" element={<Rooms />} />
+          <Route path="rooms/:id" element={<RoomDetail />} />
+          <Route path="rooms/new" element={<NewRoom />} />
+          <Route path="reservations" element={<Reservations />} />
+          <Route path="reservations/new" element={<NewReservation />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Route>
       </Routes>
     </Router>
   );
