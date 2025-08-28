@@ -41,13 +41,13 @@
 <summary>🖼️ Voir les captures d'écran</summary>
 
 ### Dashboard Principal
-![Dashboard](./frontend/public/images/dashboard.jpg)
+![Dashboard](images/dashboard.jpg)
 
 ### Gestion des Chambres
-![Gestion des Chambres](./frontend/public/images/chambres.jpg)
+![Gestion des Chambres](images/chambres.jpg)
 
 ### Interface de Réservation
-![Interface de Réservation](./frontend/public/images/reservations.jpg)
+![Interface de Réservation](images/reservations.jpg)
 
 </details>
 
